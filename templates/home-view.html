@@ -4,10 +4,10 @@
 
 <h1>{{title}} (id: {{object.id}})!</h1>
 <p>{{content}}!</p>
-
+<a href="{% url "article-create" %}">Create Article</a>
 <ul>
     {% for i in article_queryset  %}
-        <li><a href ='/articles/{{ i.id}}/'> {{ i.title }} - {{i.content}} </a></li>
+        <li><a href ='{{i.get_absolute_url}}'> {{ i.title }} - {{i.content}} </a></li>
     {% endfor %}
 </ul>
 
